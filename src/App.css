@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+.active {
+  height: 105px;
+  margin-right: 15px;
+}
+
+:focus {
+  outline: none;
+  border: 1px solid black !important;
+}
