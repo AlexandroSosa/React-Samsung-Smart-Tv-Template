@@ -1,0 +1,18 @@
+.text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.button {
+  height: 105px;
+  width: 150px;
+  margin-right: 15px;
+  background-color: #313131;
+  align-items: center;
+  justify-content: center;
+}
+
+:focus {
+  outline: none;
+  border: 1px solid white !important;
+}
