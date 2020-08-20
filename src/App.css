@@ -1,7 +1,7 @@
 .container {
   text-align: center;
   height: 100vh;
-  background-color: #414141;
+  background-color: #111;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,12 +11,39 @@
   color: white;
 }
 
-
-.sub-container {
+.sidebar {
+  height: 100%;
+  width: 110px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: #1b1b1b;
+  overflow-x: hidden;
+  transition: width 0.1s;
+  justify-content: space-between;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.sidebar-wider {
+  height: 100%;
+  width: 210px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: #1b1b1b;
+  overflow-x: hidden;
+  transition: width 0.1s;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-sidebar {
+  width: 85px;
+  margin-top: 20px;
 }

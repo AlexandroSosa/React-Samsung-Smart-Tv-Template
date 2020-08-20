@@ -1,36 +1,43 @@
-import React, { useState, useEffect } from "react";
-
-// Components
-import Button from '../components/button';
+import React from "react";
 
 // Css
-import '../App.css';
+import Button from "../components/button";
 
-export default function Home() {
-  const [keyCode, setKeyCode] = useState('');
+// Modules
+import { connect } from "react-redux";
 
-  const keyHandler = (key) => {
-    console.log(key.keyCode);
-    setKeyCode(key.keyCode);
-  };
-
-  useEffect(() => {
-    window.addEventListener('keydown', keyHandler);
-
-    return () => {
-      window.removeEventListener('keydown', keyHandler);
-    };
-  });
-  
+function Home(props) {
   return (
-    <div>
-      <div className="container">
-        <h3>Use the remote buttons to see the keycode: {keyCode}</h3>
-        <div className="sub-container">
-          <Button label="About" to="about" />
-          <Button label="Unknown" />
-        </div>
-      </div>
+    <div className="container">
+      <h2>Home</h2>
+      <h6 style={{ margin: 0 }}>
+        Welcome to the React Samsung Smart Tv Template!
+      </h6>
+      <h6 style={{ margin: 0 }}>v1.1.0</h6>
+      <h6 style={{ margin: 0 }}>
+        Navigate between screens by going to the sidebar!
+      </h6>
+      <h6 style={{ margin: 0 }}>
+        or if you want to exit just go to the button at the bottom of the
+        sidebar!
+      </h6>
+      <h6 style={{ margin: 0 }}>
+        This button is placed to showcase the collapse of the sidebar
+      </h6>
+      <Button focus={() => props.setIsFocusedInSideBar(false)} />
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setIsFocusedInSideBar: (data) => {
+      dispatch({
+        type: "SET_FOCUSED_SIDEBAR",
+        focused: data,
+      });
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Home);
