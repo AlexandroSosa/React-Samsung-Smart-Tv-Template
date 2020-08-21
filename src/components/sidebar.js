@@ -7,11 +7,12 @@ import Button from "./button";
 import { connect } from "react-redux";
 
 import logo from '../assets/logo.png'
-
 function Sidebar(props) {
   const [currentRoute, setCurrentRoute] = useState("/");
 
-  return (
+
+
+  return !props.sideBarIsHidden ? (
     <div className={props.focusedInSidebar ? "sidebar-wider" : "sidebar"}>
       <img className="logo-sidebar" src={logo}/> 
       <div>
@@ -49,12 +50,13 @@ function Sidebar(props) {
         focus={() => props.setIsFocusedInSideBar(true)}
       />
     </div>
-  );
+  ): null;
 }
 
 const mapStateToProps = (state) => {
   return {
     focusedInSidebar: state.app.focusedInSidebar,
+    sideBarIsHidden: state.app.sideBarIsHidden
   };
 };
 

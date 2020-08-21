@@ -3,6 +3,7 @@ import React from "react";
 // Pages
 import Home from "./pages/home";
 import Videos from "./pages/videos";
+import VideoPlayer from "./pages/videoPlayer";
 import Spinners from "./pages/spinners";
 import Github from "./pages/github";
 import Exit from "./pages/exit";
@@ -25,6 +26,7 @@ function App(props) {
         <SpatialNavigation />
         <Sidebar />
         <Switch>
+        <Route component={VideoPlayer} path="/videos/player"></Route>
           <Route component={Videos} path="/videos"></Route>
           <Route component={Spinners} path="/spinners"></Route>
           <Route component={Github} path="/github"></Route>

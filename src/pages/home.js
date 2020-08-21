@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 function Home(props) {
   return (
-    <div className="container">
+    <div className="container center">
       <h2>Home</h2>
       <h6 style={{ margin: 0 }}>
         Welcome to the React Samsung Smart Tv Template!

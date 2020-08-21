@@ -45,3 +45,23 @@
 .text {
   font-size: 21px
 }
+
+
+.buttonVideoPlayer {
+  height: 110px;
+  width: 110px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 55px;
+  border-radius: 100px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.buttonVideoPlayer:focus {
+  outline: none;
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+}

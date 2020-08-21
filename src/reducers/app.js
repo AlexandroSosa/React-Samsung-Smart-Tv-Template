@@ -1,6 +1,7 @@
 const initialState = {
   focusedInSidebar: false,
-  isLeaving: false
+  isLeaving: false,
+  sideBarIsHidden: false
 };
 
 const app = (state = initialState, action) => {
@@ -15,6 +16,11 @@ const app = (state = initialState, action) => {
         ...state,
         isLeaving: action.isLeaving,
       };
+      case 'SET_SIDEBAR_HIDDEN':
+        return {
+          ...state,
+          sideBarIsHidden: action.isHidden,
+        };
     default:
       return state;
   }

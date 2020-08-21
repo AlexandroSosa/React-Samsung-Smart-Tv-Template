@@ -26,7 +26,7 @@ function Exit(props) {
   });
 
   return (
-    <div className="container">
+    <div className="container center">
       <h3>Are you sure you want to exit the application?</h3>
       <div
         style={{
